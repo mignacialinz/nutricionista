@@ -456,6 +456,24 @@ body.sobre-mi .hero-image img {
   }
 }
 
+  /* ==========================
+     SERVICIOS – MOBILE FIX
+  ========================== */
+
+  body.servicios .services-grid {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  body.servicios .service-card {
+    padding: 24px 22px;
+    text-align: left;
+  }
+
+  body.servicios .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
 
 /* ==========================
    VARIANTE SERVICIOS
@@ -659,3 +677,4 @@ body.servicios .follow-up {
   }
 
 }
+
