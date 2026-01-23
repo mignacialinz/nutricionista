@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | María Ignacia Linz</title>
+  <meta name="description" content="Contacto con María Ignacia Linz, nutricionista materno infantil en Punta Arenas. Agenda tu consulta o envía tus dudas.">
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="contacto">
+
+<header class="header">
+  <div class="container header-content">
+    <div class="brand">
+      <img src="imagenes/logo 3.png" alt="Logo Nutrición Materno Infantil" class="logo">
+      <span class="brand-name">Nutricionista María Ignacia Linz</span>
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- INTRO CONTACTO -->
+<section class="services-intro">
+  <div class="services-intro-content">
+    <h1>Contacto</h1>
+    <p class="services-intro-text">
+      Si tienes dudas, quieres coordinar una consulta o saber si este
+      acompañamiento es para ti, puedes escribirme a través del formulario.
+    </p>
+    <p class="services-intro-meta">
+      Atención presencial · Centro Médico Alfamed · Punta Arenas
+    </p>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section>
+  <div class="container narrow">
+    
+    <form 
+      action="https://formspree.io/f/xkoonzjy"
+      method="POST"
+      class="contact-form"
+    >
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="nombre" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Asunto</label>
+        <input type="text" id="subject" name="asunto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Consulta</label>
+        <textarea id="message" name="mensaje" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn primary">
+        Enviar mensaje
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="emotional">
+  <div class="container emotional-grid">
+
+    <div>
+      <h2>Atención presencial</h2>
+      <p>
+        Centro Médico Alfamed<br>
+        Avenida Bulnes · Punta Arenas<br>
+        Magallanes
+      </p>
+      <p>
+        📞 Agenda de horas:<br>
+        <strong>(61) 2230406</strong>
+      </p>
+    </div>
+
+    <div class="emotional-card">
+      <iframe
+        src="https://www.google.com/maps?q=Centro%20M%C3%A9dico%20Alfamed%20Punta%20Arenas&output=embed"
+        width="100%"
+        height="280"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <p class="footer-name">María Ignacia Linz Bahamonde</p>
+      <p class="footer-role">Nutricionista · Materno Infantil</p>
+      <p class="footer-phrase">
+        Acompañamiento nutricional cercano, respetuoso y basado en evidencia.
+      </p>
+    </div>
+
+    <div class="footer-contact">
+      <p><strong>Atención presencial</strong></p>
+      <p>📍 Centro Médico Alfamed</p>
+      <p>Punta Arenas</p>
+      <p class="footer-phone">
+        📞 Agenda de horas:<br>
+        <strong>(61) 2230406</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-credit">
+    <p>
+      Sitio desarrollado por
+      <a href="https://www.linkedin.com/in/cristianzunigas/" target="_blank">
+        Cristian Zúñiga Silva
+      </a>
+    </p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

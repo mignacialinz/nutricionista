@@ -1,0 +1,636 @@
+:root {
+  --lila: #b9a7e6;
+  --lila-soft: #e7e0f6;
+  --rosado: #f4b6c2;
+  --crema: #fbf7f2;
+  --gris: #4b4b63;
+  --verde: #9ec9a3;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--crema);
+  color: var(--gris);
+  line-height: 1.7;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+  padding: 90px 0;
+}
+
+/* ==========================
+   HELPERS EDITORIALES
+========================== */
+
+.container.narrow {
+  max-width: 760px;
+}
+
+.text-centered-narrow {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.editorial-close {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.editorial-close p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+/* HEADER */
+.header {
+  background: #fff;
+  padding: 18px 0;
+  position: relative; /* 👈 CLAVE */
+  z-index: 1000;       /* 👈 CLAVE */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-name {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--gris);
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--lila);
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 26px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 42px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+/* ==========================
+   MENU HAMBURGUESA
+========================== */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--gris);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    z-index: 999; /* 👈 AÑADIR */
+  }
+
+  .nav a {
+    margin: 12px 0;
+    display: block;
+  }
+
+  .nav.nav-open {
+    display: flex;
+  }
+}
+
+
+
+
+/* ==========================
+   SERVICES INTRO
+========================== */
+
+.services-intro {
+  background: linear-gradient(180deg, #fff, var(--crema));
+  padding: 100px 0 70px;
+}
+
+.services-intro-content {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.services-intro h1 {
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+.services-intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.services-intro-meta {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+/* Caja editorial para intro de servicios */
+.services-intro-box {
+  background: #fff;
+  border-radius: 36px;
+  padding: 70px 40px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 700px) {
+  .services-intro-box {
+    padding: 50px 24px;
+    border-radius: 28px;
+  }
+}
+
+
+/* BUTTONS */
+.btn {
+  padding: 14px 34px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.primary {
+  background: var(--lila);
+  color: #fff;
+}
+
+.primary:hover {
+  background: #a795dc;
+}
+
+.secondary {
+  border: 2px solid var(--lila);
+  color: var(--lila);
+}
+
+.secondary:hover {
+  background: var(--lila-soft);
+}
+
+/* VISUAL CONNECTION */
+.visual-connection {
+  padding: 50px 0;
+}
+
+.visual-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+/* EMOTIONAL (BASE INDEX) */
+.emotional {
+  background: var(--lila-soft);
+}
+
+.emotional-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.emotional-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 26px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+}
+
+/* SERVICES */
+.services h2 {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 26px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+
+
+/* CTA (INDEX) */
+.cta {
+  background: var(--rosado);
+  text-align: center;
+}
+
+.cta-pre {
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+
+.cta h2 {
+  margin-bottom: 22px;
+}
+
+.cta p {
+  margin-bottom: 34px;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* FOOTER */
+.footer {
+  background: #fff;
+  padding: 70px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+}
+
+.footer-role {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.footer-credit {
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid rgba(14,59,44,.10);
+  text-align:center;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(14,59,44,.45);
+}
+
+/* ==========================
+   VARIANTES SOBRE MI
+========================== */
+
+body.sobre-mi .hero {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--crema), #fff);
+}
+
+body.sobre-mi .hero-text h1 {
+  font-size: 2.4rem;
+}
+
+body.sobre-mi .emotional {
+  padding: 110px 0;
+}
+
+body.sobre-mi .services:first-of-type .service-card {
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+body.sobre-mi .cta {
+  background: var(--lila-soft);
+}
+
+body.sobre-mi .editorial p {
+  letter-spacing: 0.2px;
+}
+
+
+/* ==========================
+   HERO – VARIANTES POR PÁGINA
+========================== */
+
+/* HOME: imagen más profesional, contenida */
+body.home .hero-image img {
+  border-radius: 22px;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+/* SOBRE MI: imagen más humana, suave */
+body.sobre-mi .hero-image img {
+  border-radius: 42px;
+  max-height: 460px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid,
+  .emotional-grid,
+  .process-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Seguimiento nutricional */
+  body.servicios .follow-up .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================
+   VARIANTE SERVICIOS
+========================== */
+
+body.servicios section {
+  padding: 80px 0;
+}
+
+/* Intro editorial (reemplaza hero) */
+body.servicios .services-intro {
+  background: linear-gradient(180deg, #fff, var(--crema));
+  padding: 100px 0 70px;
+}
+
+body.servicios .services-intro h1 {
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+body.servicios .services-intro p {
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  opacity: 0.9;
+}
+
+body.servicios .services-intro .meta {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Servicios: look más editorial */
+body.servicios .services h2 {
+  margin-bottom: 40px;
+}
+
+body.servicios .service-card {
+  text-align: left;
+  padding: 36px 34px;
+}
+
+body.servicios .service-card strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+body.servicios .service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Proceso más liviano */
+body.servicios .process-step {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* CTA más suave que el home */
+body.servicios .cta {
+  background: var(--lila-soft);
+}
+
+/* ==========================
+   SEGUIMIENTO NUTRICIONAL
+========================== */
+
+.follow-up {
+  background-color: #faf7f3; /* leve diferencia respecto al fondo base */
+}
+
+body.servicios .follow-up h2 {
+  margin-bottom: 30px;
+}
+
+
+/* PROCESS */
+.process {
+  background: #fff;
+}
+
+.process h2 {
+  text-align: center;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.process-step {
+  background: var(--lila-soft);
+  padding: 34px;
+  border-radius: 26px;
+  text-align: center;
+}
+
+.process-step span {
+  display: inline-block;
+  background: var(--lila);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  line-height: 42px;
+  margin-bottom: 18px;
+}
+
+body.servicios .follow-up .services-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.follow-up-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.follow-up-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+body.servicios .follow-up {
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+
+/* ==========================
+   FORMULARIO DE CONTACTO
+========================== */
+
+.contact-form {
+  background: #fff;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  opacity: 0.75;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: 'Inter', sans-serif;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--lila);
+  box-shadow: 0 0 0 3px rgba(185, 167, 230, 0.25);
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
