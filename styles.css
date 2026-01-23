@@ -675,6 +675,22 @@ body.servicios .follow-up {
   .process-step {
     padding: 28px 22px;
   }
+  /* Seguimiento nutricional */
+  body.servicios .follow-up .service-card {
+    padding: 22px 20px;
+  }
+
+  body.servicios .follow-up .service-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  body.servicios .follow-up .service-card strong {
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 10px;
+  }
 
 }
+
 
