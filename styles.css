@@ -549,6 +549,10 @@ body.servicios .follow-up h2 {
 }
 
 .process-step {
+  min-width: 0;
+}
+
+.process-step {
   background: var(--lila-soft);
   padding: 34px;
   border-radius: 26px;
@@ -633,4 +637,25 @@ body.servicios .follow-up {
 
 .contact-form button {
   margin-top: 10px;
+}
+
+/* ==========================
+   FIX MOBILE SAFARI – PROCESO
+========================== */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .process-step {
+    padding: 28px 22px;
+  }
+
 }
