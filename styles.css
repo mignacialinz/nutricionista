@@ -50,9 +50,7 @@ body.contacto section:nth-of-type(2) {
   padding-top: 40px;
 }
 
-/* ==========================
-   HELPERS EDITORIALES
-========================== */
+/*  HELPERS EDITORIALES */
 
 .container.narrow {
   max-width: 760px;
@@ -240,11 +238,11 @@ body.sobre-mi .services:nth-of-type(2) .service-card {
 
 /* BUTTONS */
 .btn {
-  padding: 18px 50px;   /* más ancho + más alto */
-  min-height: 56px;     /* altura mínima táctil (UX móvil real) */
+  padding: 18px 50px;
+  min-height: 56px;
   font-size: 1.05rem;
-  border-radius: 40px;  /* más moderno */
-  font-weight: 600;     /* más peso visual */
+  border-radius: 40px;
+  font-weight: 600;
   letter-spacing: .3px;
 
   text-decoration: none;
@@ -349,7 +347,6 @@ body.contacto .emotional {
 .service-card:hover {
   transform: translateY(-4px);
 }
-
 
 
 /* CTA (INDEX) */
@@ -499,19 +496,18 @@ body.sobre-mi .services-grid {
    HERO – VARIANTES POR PÁGINA
 ========================== */
 
-/* HOME: imagen más profesional, contenida */
+/* HOME: imagen contenida */
 body.home .hero-image img {
   border-radius: 22px;
   max-height: 480px;
   object-fit: cover;
 }
 
-/* SOBRE MI: imagen más humana, suave */
+/* SOBRE MI: imagen más suave */
 body.sobre-mi .hero-image img {
   border-radius: 42px;
   max-height: 460px;
 }
-
 
 
   /* ==========================
@@ -752,7 +748,7 @@ body.agendar .agendar-btn {
   font-size: 1.05rem;
   padding: 16px 42px;
   border-radius: 40px;
-  margin-bottom: 36px; /* 👈 EL ESPACIADO REAL */
+  margin-bottom: 36px;
 }
 
 body.agendar .agendar-note {
@@ -871,3 +867,4 @@ section h2 {
 .hero-image img {
   box-shadow: 0 25px 60px rgba(0,0,0,0.08);
 }
+
