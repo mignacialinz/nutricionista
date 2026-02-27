@@ -5,6 +5,11 @@
   --crema: #fbf7f2;
   --gris: #4b4b63;
   --verde: #9ec9a3;
+
+  --space-xl: 110px;
+  --space-lg: 90px;
+  --space-md: 70px;
+  --space-sm: 50px;
 }
 
 /* RESET */
@@ -37,7 +42,12 @@ p {
 }
 
 section {
-  padding: 90px 0;
+  padding: var(--space-lg) 0;
+}
+
+/* CONTACTO AJUSTES */
+body.contacto section:nth-of-type(2) {
+  padding-top: 40px;
 }
 
 /* ==========================
@@ -55,8 +65,12 @@ section {
 }
 
 .editorial-close {
-  padding: 60px 0;
+  padding: 80px 0 60px;
   text-align: center;
+}
+
+body.sobre-mi .editorial-close {
+  background: #fff;
 }
 
 .editorial-close p {
@@ -64,14 +78,34 @@ section {
   line-height: 1.7;
 }
 
+body.sobre-mi .services:nth-of-type(3) .service-card {
+  padding: 18px 22px;
+  font-size: 0.9rem;
+  border-radius: 40px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* BLOQUE HUMANO SOBRE MI */
+body.sobre-mi .services:nth-of-type(2) {
+  background: var(--crema);
+}
+
+body.sobre-mi .services:nth-of-type(2) .service-card {
+  background: #fff;
+  border-radius: 22px;
+}
 
 /* HEADER */
 .header {
-  background: #fff;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
   padding: 18px 0;
-  position: relative; /* 👈 CLAVE */
-  z-index: 1000;       /* 👈 CLAVE */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
+
 
 .header-content {
   display: flex;
@@ -109,7 +143,7 @@ section {
 
 /* HERO */
 .hero {
-  padding: 100px 0;
+  padding: 140px 0 120px;
 }
 
 .hero-grid {
@@ -124,8 +158,9 @@ section {
 }
 
 .hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 26px;
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+  line-height: 1.12;
+  margin-bottom: 32px;
 }
 
 .hero-text p {
@@ -159,38 +194,6 @@ section {
   color: var(--gris);
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #fff;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    z-index: 999; /* 👈 AÑADIR */
-  }
-
-  .nav a {
-    margin: 12px 0;
-    display: block;
-  }
-
-  .nav.nav-open {
-    display: flex;
-  }
-}
-
-
-
 
 /* ==========================
    SERVICES INTRO
@@ -198,7 +201,7 @@ section {
 
 .services-intro {
   background: linear-gradient(180deg, #fff, var(--crema));
-  padding: 100px 0 70px;
+  padding: var(--space-xl) 0 var(--space-md);
 }
 
 .services-intro-content {
@@ -228,36 +231,39 @@ section {
 .services-intro-box {
   background: #fff;
   border-radius: 36px;
-  padding: 70px 40px;
+  padding: 80px 60px;
   max-width: 1000px;
-  margin: 40px auto 0;
+  margin: 60px auto 0;
   box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-}
-
-@media (max-width: 700px) {
-  .services-intro-box {
-    padding: 50px 24px;
-    border-radius: 28px;
-  }
 }
 
 
 /* BUTTONS */
 .btn {
-  padding: 14px 34px;
-  border-radius: 30px;
+  padding: 18px 50px;   /* más ancho + más alto */
+  min-height: 56px;     /* altura mínima táctil (UX móvil real) */
+  font-size: 1.05rem;
+  border-radius: 40px;  /* más moderno */
+  font-weight: 600;     /* más peso visual */
+  letter-spacing: .3px;
+
   text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 .primary {
-  background: var(--lila);
+  background: linear-gradient(135deg, var(--lila), #a795dc);
   color: #fff;
+  box-shadow: 0 10px 24px rgba(149,128,214,.35);
+  transition: .25s ease;
 }
 
 .primary:hover {
-  background: #a795dc;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(149,128,214,.45);
 }
 
 .secondary {
@@ -267,6 +273,18 @@ section {
 
 .secondary:hover {
   background: var(--lila-soft);
+}
+
+.tertiary {
+  background: linear-gradient(135deg, var(--lila), #a795dc);
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(149,128,214,.35);
+  transition: .25s ease;
+}
+
+.tertiary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(149,128,214,.45);
 }
 
 /* VISUAL CONNECTION */
@@ -284,7 +302,11 @@ section {
 
 /* EMOTIONAL (BASE INDEX) */
 .emotional {
-  background: var(--lila-soft);
+  background: linear-gradient(180deg, var(--lila-soft), #f3ecfb);
+}
+
+body.contacto .emotional {
+  padding: 100px 0;
 }
 
 .emotional-grid {
@@ -309,16 +331,18 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
 }
 
 .service-card {
   background: #fff;
-  padding: 30px;
+  padding: 34px 32px;
   border-radius: 26px;
+  height: 100%;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
 }
 
@@ -330,8 +354,14 @@ section {
 
 /* CTA (INDEX) */
 .cta {
-  background: var(--rosado);
+  background: linear-gradient(135deg, var(--rosado), #f7c6cf);
   text-align: center;
+  color: #3d3d4f;
+}
+
+.cta .btn.primary {
+  background: var(--lila);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
 
 .cta-pre {
@@ -353,7 +383,7 @@ section {
 /* FOOTER */
 .footer {
   background: #fff;
-  padding: 70px 0 30px;
+  padding: 100px 0 40px;
 }
 
 .footer-grid {
@@ -390,16 +420,28 @@ section {
 ========================== */
 
 body.sobre-mi .hero {
-  padding: 80px 0;
-  background: linear-gradient(180deg, var(--crema), #fff);
+  padding: 110px 0 90px;
+  background: linear-gradient(180deg, #fff, var(--crema));
 }
 
 body.sobre-mi .hero-text h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+}
+
+body.sobre-mi .hero-text p {
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin-bottom: 14px;
+}
+
+body.sobre-mi .hero-text p:last-child {
+  margin-bottom: 0;
 }
 
 body.sobre-mi .emotional {
-  padding: 110px 0;
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--lila-soft), #efe8fb);
 }
 
 body.sobre-mi .services:first-of-type .service-card {
@@ -408,13 +450,50 @@ body.sobre-mi .services:first-of-type .service-card {
 }
 
 body.sobre-mi .cta {
-  background: var(--lila-soft);
+  background: linear-gradient(180deg, var(--lila-soft), #e3daf8);
 }
 
 body.sobre-mi .editorial p {
   letter-spacing: 0.2px;
 }
 
+/* ==========================
+   SOBRE MI - FORMACIÓN
+========================== */
+
+body.sobre-mi .services:nth-of-type(1) .services-grid {
+  max-width: 900px;
+  margin: 40px auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+body.sobre-mi .service-card {
+  padding: 22px 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+body.sobre-mi .services:nth-of-type(1) {
+  background: linear-gradient(180deg, #fff, #f8f6f2);
+}
+
+body.sobre-mi .service-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+body.sobre-mi .services {
+  padding: 70px 0;
+}
+
+body.sobre-mi .services-grid {
+  align-items: stretch;
+}
 
 /* ==========================
    HERO – VARIANTES POR PÁGINA
@@ -435,38 +514,17 @@ body.sobre-mi .hero-image img {
 
 
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-grid,
-  .emotional-grid,
-  .process-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  /* Seguimiento nutricional */
-  body.servicios .follow-up .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
   /* ==========================
-     SERVICIOS – MOBILE FIX
+     SERVICIOS – AJUSTES BASE
   ========================== */
 
   body.servicios .services-grid {
-    max-width: 520px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
   body.servicios .service-card {
-    padding: 24px 22px;
+    padding: 32px 34px;
     text-align: left;
   }
 
@@ -475,18 +533,18 @@ body.sobre-mi .hero-image img {
     line-height: 1.55;
   }
 
+
 /* ==========================
    VARIANTE SERVICIOS
 ========================== */
 
 body.servicios section {
-  padding: 80px 0;
+  padding: 70px 0;
 }
 
 /* Intro editorial (reemplaza hero) */
 body.servicios .services-intro {
   background: linear-gradient(180deg, #fff, var(--crema));
-  padding: 100px 0 70px;
 }
 
 body.servicios .services-intro h1 {
@@ -511,15 +569,12 @@ body.servicios .services h2 {
   margin-bottom: 40px;
 }
 
-body.servicios .service-card {
-  text-align: left;
-  padding: 36px 34px;
-}
 
 body.servicios .service-card strong {
   display: block;
   font-size: 1rem;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 body.servicios .service-card p {
@@ -534,7 +589,8 @@ body.servicios .process-step {
 
 /* CTA más suave que el home */
 body.servicios .cta {
-  background: var(--lila-soft);
+  background: linear-gradient(180deg, var(--lila-soft), #ddd3f5);
+  margin-top: 40px;
 }
 
 /* ==========================
@@ -542,7 +598,7 @@ body.servicios .cta {
 ========================== */
 
 .follow-up {
-  background-color: #faf7f3; /* leve diferencia respecto al fondo base */
+  background: linear-gradient(180deg, #faf7f3, #f3eee8); /* leve diferencia respecto al fondo base */
 }
 
 body.servicios .follow-up h2 {
@@ -552,8 +608,12 @@ body.servicios .follow-up h2 {
 
 /* PROCESS */
 .process {
-  background: #fff;
+  background: var(--lila-soft);
+  padding: 90px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+
 
 .process h2 {
   text-align: center;
@@ -568,14 +628,19 @@ body.servicios .follow-up h2 {
 
 .process-step {
   min-width: 0;
-}
-
-.process-step {
-  background: var(--lila-soft);
+  background: #fff;
   padding: 34px;
   border-radius: 26px;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  transition: .25s ease;
 }
+
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(0,0,0,.10);
+}
+
 
 .process-step span {
   display: inline-block;
@@ -618,7 +683,7 @@ body.servicios .follow-up {
 
 .contact-form {
   background: #fff;
-  padding: 50px;
+  padding: 60px;
   border-radius: 30px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
@@ -654,13 +719,132 @@ body.servicios .follow-up {
 }
 
 .contact-form button {
-  margin-top: 10px;
+  margin-top: 20px;
+  align-self: center;
+  min-width: 200px;
 }
 
+
+/* BOTON CTA NAV */
+.nav-cta {
+  margin-left: 20px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+
 /* ==========================
-   FIX MOBILE SAFARI – PROCESO
+   AGENDAR (CORRECTO)
 ========================== */
 
+body.agendar .agendar-hero {
+  padding: var(--space-xl) 0 var(--space-md);
+  text-align: center;
+}
+
+body.agendar .agendar-sub {
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+body.agendar .agendar-btn {
+  font-size: 1.05rem;
+  padding: 16px 42px;
+  border-radius: 40px;
+  margin-bottom: 36px; /* 👈 EL ESPACIADO REAL */
+}
+
+body.agendar .agendar-note {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+
+/* =================================================
+   RESPONSIVE
+   TODO EL MOBILE VIVE AQUÍ (NADA ARRIBA)
+================================================= */
+
+@media (min-width: 1200px){
+  section h2{
+    font-size: 2.3rem;
+  }
+}
+
+/* ===== TABLET / MENU ===== */
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    z-index: 999;
+  }
+
+  .nav a {
+    margin: 12px 0;
+    display: block;
+  }
+
+  .nav.nav-open {
+    display: flex;
+  }
+
+  .hero-grid,
+  .emotional-grid,
+  .process-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .nav-cta {
+    margin-top: 12px;
+    width: 80%;
+  }
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+
+  body.agendar .btn.primary {
+    width: 100%;
+  }
+
+  .services-intro-box {
+    padding: 50px 24px;
+    border-radius: 28px;
+  }
+
+  .hero {
+    padding: var(--space-md) 0;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
+
+
+/* ===== MOBILE PEQUEÑO / SAFARI ===== */
 @media (max-width: 600px) {
 
   body {
@@ -675,22 +859,15 @@ body.servicios .follow-up {
   .process-step {
     padding: 28px 22px;
   }
-  /* Seguimiento nutricional */
-  body.servicios .follow-up .service-card {
-    padding: 22px 20px;
-  }
-
-  body.servicios .follow-up .service-card p {
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  body.servicios .follow-up .service-card strong {
-    font-size: 0.95rem;
-    display: block;
-    margin-bottom: 10px;
-  }
 
 }
 
+/* micro mejoras premium */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+}
 
+.hero-image img {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
