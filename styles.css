@@ -812,8 +812,11 @@ body.agendar .agendar-note {
   }
 
   .nav-cta {
-    margin-top: 12px;
-    width: 80%;
+    margin-top: 16px;
+    width: auto;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    align-self: center;
   }
 }
 
@@ -867,4 +870,5 @@ section h2 {
 .hero-image img {
   box-shadow: 0 25px 60px rgba(0,0,0,0.08);
 }
+
 
